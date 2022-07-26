@@ -11,11 +11,11 @@ mkdir ovpn
 And then , you should get this image 
 
 ```bash
-docker pull officialalikhani/openvpn
+docker pull officialalikhani/openvpn:v1
 ```
 
 And finally Run a container with this command. 
 
 ```bash
-docker run -it --rm --cap-add=NET_ADMIN --device /dev/net/tun -v /root/ovpn:/root officialalikhani/openvpn
+docker run -it --rm --cap-add=NET_ADMIN --device /dev/net/tun -v /root/ovpn:/root officialalikhani/openvpn:v1
 ```
