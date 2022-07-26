@@ -1,13 +1,21 @@
 # OpenVPN Docker image
 
 Fill your configuration file on myconfig.ovpn with your username ,password and content of your certificate file. \
-Make OpenVPN image with this Dockerfile with this command.
+And use OpenVPN with my openvpn image on my docker repository. \
+You should put all these files on a new directory that name /ovpn on your root directory. \
 
+So Run this command on your root directory.
 ```bash
-Docker build . -t openvpn:v1
+mkdir ovpn
 ```
-And finally Run a container with this command.
+And then , you should get this image 
 
 ```bash
-docker run -it --rm --cap-add=NET_ADMIN --device /dev/net/tun -p   -v $PWD:$PWD 
+docker pull officialalikhani/openvpn
+```
+
+And finally Run a container with this command. 
+
+```bash
+docker run -it --rm --cap-add=NET_ADMIN --device /dev/net/tun -p 5359:5359/udp  -v /root/ovpn:/root officialalikhani/openvpn
 ```
