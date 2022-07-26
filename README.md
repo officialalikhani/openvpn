@@ -17,5 +17,5 @@ docker pull officialalikhani/openvpn
 And finally Run a container with this command. 
 
 ```bash
-docker run -it --rm --cap-add=NET_ADMIN --device /dev/net/tun -p 5359:5359/udp  -v /root/ovpn:/root officialalikhani/openvpn
+docker run -it --rm --cap-add=NET_ADMIN --device /dev/net/tun -p -v /root/ovpn:/root officialalikhani/openvpn
 ```
